@@ -41,12 +41,48 @@ h1 {
   touch-action: none;
 }
 
+.board-wrap {
+  position: relative;
+}
+
+.menu-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 72%);
+  color: #fff;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.menu-panel {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.menu-panel h2,
+.menu-panel p {
+  margin: 0;
+}
+
+.menu-actions {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.menu-overlay.hidden,
+.menu-panel.hidden {
+  display: none;
+}
+
 .controls {
   margin-top: 0.75rem;
 }
 
 .controls button,
-.actions button {
+.actions button,
+.menu-actions button {
   font: inherit;
   padding: 0.4rem 0.6rem;
   margin: 0.15rem;

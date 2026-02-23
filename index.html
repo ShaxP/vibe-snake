@@ -11,9 +11,40 @@
       <h1>Snake</h1>
       <div class="hud">
         <p>Score: <span id="score">0</span></p>
-        <p id="status">Press any direction to start</p>
+        <p id="status">Main menu</p>
       </div>
-      <canvas id="board" width="400" height="400" aria-label="Snake board"></canvas>
+      <div class="board-wrap">
+        <canvas id="board" width="400" height="400" aria-label="Snake board"></canvas>
+        <div id="menu-overlay" class="menu-overlay" aria-live="polite">
+          <section id="menu-main" class="menu-panel">
+            <h2>Snake</h2>
+            <p>Choose an option.</p>
+            <div class="menu-actions">
+              <button id="start-btn" type="button">Start Game</button>
+              <button id="instructions-btn" type="button">Instructions</button>
+            </div>
+          </section>
+
+          <section id="menu-instructions" class="menu-panel hidden">
+            <h2>How to Play</h2>
+            <p>Use Arrow keys or WASD to move the snake.</p>
+            <p>Eat food to grow and score points. Avoid walls and yourself.</p>
+            <p>Press Escape to pause during the game.</p>
+            <div class="menu-actions">
+              <button id="instructions-back-btn" type="button">Back</button>
+            </div>
+          </section>
+
+          <section id="menu-pause" class="menu-panel hidden">
+            <h2>Game Paused</h2>
+            <p>What would you like to do?</p>
+            <div class="menu-actions">
+              <button id="continue-btn" type="button">Continue</button>
+              <button id="quit-btn" type="button">Quit to Main Menu</button>
+            </div>
+          </section>
+        </div>
+      </div>
       <div class="controls">
         <button data-action="up" aria-label="Move up">Up</button>
         <div>
@@ -26,7 +57,7 @@
         <button id="pause-btn" type="button">Pause</button>
         <button id="restart-btn" type="button">Restart</button>
       </div>
-      <p class="hint">Controls: Arrow keys or WASD. Space toggles pause.</p>
+      <p class="hint">Use the main menu to start. Escape opens the pause menu during play.</p>
     </main>
 
     <script type="module" src="./src/game.js"></script>
